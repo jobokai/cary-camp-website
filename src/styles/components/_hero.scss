@@ -1,0 +1,65 @@
+// Hero Section - Park Photos Style
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+.hero {
+  background: linear-gradient(135deg, $forest-deep 0%, $accent-green 50%, $earth-brown 100%);
+  color: $text-light;
+  padding: $space-20 0;
+  position: relative;
+  overflow: hidden;
+  
+  // Background texture overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: $container-md;
+  }
+  
+  h1 {
+    font-family: $font-handwritten;
+    font-size: $font-size-5xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $space-4;
+    color: $text-light;
+    
+    // Hand-drawn text shadow effect
+    text-shadow: 
+      2px 2px 0px $forest-deep,
+      4px 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  &__motto {
+    font-family: $font-accent;
+    font-size: $font-size-xl;
+    color: $sunset-amber;
+    font-weight: $font-weight-medium;
+    margin-bottom: $space-6;
+    font-style: italic;
+  }
+  
+  &__description {
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-8;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

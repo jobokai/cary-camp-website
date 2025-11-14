@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Facilities from './pages/Facilities'
 import Contact from './pages/Contact'
-import './styles/carycamp.scss'
+import './styles/main.scss'
 
 function App() {
   return (

@@ -1,0 +1,85 @@
+// Layout Components
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+// Container - Park Photos Style
+.container {
+  width: 100%;
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 0 $space-4;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $space-6;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $space-8;
+  }
+}
+
+// Grid Systems
+.grid {
+  display: grid;
+  gap: $space-6;
+  
+  &--2-cols {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  &--3-cols {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  &--4-cols {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+// Flexbox Utilities
+.flex {
+  display: flex;
+  
+  &--column {
+    flex-direction: column;
+  }
+  
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &--between {
+    justify-content: space-between;
+  }
+  
+  &--wrap {
+    flex-wrap: wrap;
+  }
+}
+
+// Page Layout
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: $space-8 0;
+}
+
+// Section Spacing
+.section {
+  padding: $space-16 0;
+  
+  &--small {
+    padding: $space-12 0;
+  }
+  
+  &--large {
+    padding: $space-24 0;
+  }
+}

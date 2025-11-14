@@ -10,7 +10,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:styles": "sass src/styles/carycamp.scss public/carycamp-styles.css",
+    "build:styles": "sass src/styles/main.scss public/main-styles.css",
     "build:templates": "node scripts/renderTemplates.cjs",
     "build:static": "yarn build:styles && yarn build:templates"
   },

@@ -1,0 +1,78 @@
+// Footer - Park Photos Style
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+.footer {
+  background-color: $neutral-800;
+  color: $text-light;
+  padding: $space-16 0 $space-8 0;
+  
+  .container {
+    display: grid;
+    gap: $space-8;
+    
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+  &__section {
+    h3 {
+      font-family: $font-handwritten;
+      font-size: $font-size-xl;
+      color: $sunset-amber;
+      margin-bottom: $space-4;
+    }
+    
+    p {
+      color: $neutral-300;
+      line-height: $line-height-relaxed;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        margin-bottom: $space-2;
+      }
+    }
+    
+    a {
+      color: $neutral-300;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: $sunset-amber;
+      }
+    }
+  }
+  
+  &__bottom {
+    border-top: 1px solid $neutral-600;
+    margin-top: $space-8;
+    padding-top: $space-6;
+    text-align: center;
+    color: $neutral-400;
+    font-size: $font-size-sm;
+    
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Contact Information Styling
+.contact-info {
+  address {
+    font-style: normal;
+    line-height: $line-height-relaxed;
+    
+    strong {
+      display: block;
+      color: $text-light;
+      margin-bottom: $space-2;
+    }
+  }
+}

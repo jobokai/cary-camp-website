@@ -1,0 +1,142 @@
+// Page Content - Park Photos Style
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+.page-content {
+  padding: $space-12 0;
+  
+  .container {
+    max-width: $container-lg;
+  }
+  
+  // Article styling
+  article {
+    max-width: 768px;
+    margin: 0 auto;
+    
+    > h1 {
+      text-align: center;
+      margin-bottom: $space-8;
+      color: $accent-green;
+      font-family: $font-handwritten;
+      font-size: $font-size-4xl;
+    }
+    
+    section {
+      margin-bottom: $space-12;
+      
+      h2 {
+        color: $forest-deep;
+        border-bottom: 3px solid $sunset-amber;
+        padding-bottom: $space-2;
+        margin-bottom: $space-6;
+      }
+      
+      h3 {
+        color: $accent-green;
+        margin-top: $space-8;
+      }
+    }
+    
+    // Image styling
+    img {
+      border-radius: $radius-lg;
+      box-shadow: $shadow-md;
+      margin: $space-6 0;
+    }
+    
+    figure {
+      margin: $space-8 0;
+      text-align: center;
+      
+      img {
+        margin-bottom: $space-4;
+      }
+      
+      figcaption {
+        color: $text-secondary;
+        font-style: italic;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+  
+  // Contact page specific styling
+  address {
+    font-style: normal;
+    background-color: $neutral-100;
+    padding: $space-6;
+    border-radius: $radius-lg;
+    border-left: 4px solid $accent-green;
+    margin: $space-6 0;
+    
+    strong {
+      display: block;
+      color: $accent-green;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $space-2;
+    }
+  }
+  
+  // Ranger info styling
+  .ranger-info {
+    display: flex;
+    gap: $space-6;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: $canvas-cream;
+    padding: $space-6;
+    border-radius: $radius-lg;
+    margin: $space-6 0;
+    
+    img {
+      border-radius: $radius-lg;
+      max-width: 200px;
+      margin: 0;
+    }
+    
+    .ranger-details {
+      flex: 1;
+      min-width: 250px;
+      
+      h3 {
+        color: $forest-deep;
+        margin-top: 0;
+        margin-bottom: $space-3;
+      }
+    }
+  }
+  
+  // Previous rangers list
+  .rangers-list {
+    background-color: $neutral-100;
+    padding: $space-6;
+    border-radius: $radius-lg;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        padding: $space-2 0;
+        border-bottom: 1px solid $neutral-300;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// Facilities grid
+.facilities-grid {
+  display: grid;
+  gap: $space-6;
+  margin-top: $space-8;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

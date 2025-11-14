@@ -1,0 +1,113 @@
+// Cards - Park Photos Style
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+.card {
+  background-color: $primary-light;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid $neutral-200;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    
+    @media (min-width: $breakpoint-md) {
+      height: 240px;
+    }
+  }
+  
+  &__content {
+    padding: $space-6;
+  }
+  
+  &__title {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+    margin-bottom: $space-3;
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      
+      &:hover {
+        color: $accent-green;
+      }
+    }
+  }
+  
+  &__description {
+    color: $text-secondary;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-4;
+  }
+  
+  &__link {
+    color: $accent-green;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    
+    &:hover {
+      color: $forest-deep;
+    }
+    
+    &::after {
+      content: '→';
+      transition: transform 0.2s ease;
+    }
+    
+    &:hover::after {
+      transform: translateX(2px);
+    }
+  }
+}
+
+// Content Cards Grid
+.content-grid {
+  display: grid;
+  gap: $space-8;
+  margin-top: $space-12;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+// Facility Cards
+.facility-card {
+  @extend .card;
+  
+  h3 {
+    margin-bottom: $space-4;
+    
+    a {
+      color: $accent-green;
+      text-decoration: none;
+      font-weight: $font-weight-semibold;
+      
+      &:hover {
+        color: $forest-deep;
+      }
+    }
+  }
+  
+  p {
+    color: $text-secondary;
+    line-height: $line-height-relaxed;
+    margin-bottom: 0;
+  }
+}

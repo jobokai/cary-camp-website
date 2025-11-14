@@ -1,0 +1,39 @@
+// Variables - Color Palette inspired by park.photos with camp theming
+// Natural outdoor photography colors with warm earth tones
+
+// Primary Colors - Park Photos Style
+$primary-dark: #1a1a1a;        // Deep charcoal for text
+$primary-light: #ffffff;       // Clean white
+$accent-green: #2d5a42;        // Forest green for nature themes
+$accent-warm: #d49c3d;         // Warm golden amber
+
+// Secondary Colors
+$neutral-100: #f8f9fa;         // Light gray backgrounds
+$neutral-200: #e9ecef;         // Border colors
+$neutral-300: #dee2e6;         // Subtle borders
+$neutral-400: #ced4da;         // Muted text
+$neutral-500: #adb5bd;         // Secondary text
+$neutral-600: #6c757d;         // Body text secondary
+$neutral-700: #495057;         // Body text primary
+$neutral-800: #343a40;         // Headings
+$neutral-900: #212529;         // Dark text
+
+// Camp-specific Colors
+$forest-deep: #1e3a1a;         // Deep forest green
+$earth-brown: #8b5a3c;         // Rich earth brown
+$sunset-amber: #d49c3d;        // Sunset amber
+$stone-gray: #a0a0a0;          // Natural stone
+$canvas-cream: #faf8f3;        // Warm cream background
+
+// Accessibility Colors (WCAG AA compliant)
+$text-primary: $neutral-900;
+$text-secondary: $neutral-600;
+$text-muted: $neutral-500;
+$text-light: $primary-light;
+$link-color: $accent-green;
+$link-hover: $forest-deep;
+$focus-color: #4a7c59;
+$error-color: #dc3545;
+$success-color: #28a745;
+$warning-color: #ffc107;
+$info-color: #17a2b8;

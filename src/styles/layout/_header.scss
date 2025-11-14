@@ -1,0 +1,135 @@
+// Header Navigation - Park Photos Style
+@use 'sass:color';
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+.header {
+  background-color: $primary-light;
+  border-bottom: 1px solid $neutral-200;
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  backdrop-filter: blur(10px);
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $space-4 $space-4;
+    
+    @media (min-width: $breakpoint-md) {
+      padding: $space-6 $space-6;
+    }
+  }
+}
+
+.logo {
+  font-family: $font-handwritten;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $accent-green;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  
+  &:hover {
+    color: $forest-deep;
+  }
+}
+
+.nav {
+  display: none;
+  
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    align-items: center;
+    gap: $space-8;
+  }
+  
+  &__link {
+    font-weight: $font-weight-medium;
+    color: $text-primary;
+    padding: $space-2 $space-3;
+    border-radius: $radius-md;
+    transition: all 0.2s ease;
+    
+    &:hover,
+    &:focus {
+      color: $accent-green;
+      background-color: color.adjust($accent-green, $alpha: -0.9);
+    }
+    
+    &--active {
+      color: $accent-green;
+      background-color: color.adjust($accent-green, $alpha: -0.9);
+    }
+  }
+}
+
+// Mobile Navigation
+.mobile-nav {
+  display: block;
+  
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+  
+  &__toggle {
+    background: none;
+    border: none;
+    font-size: $font-size-xl;
+    color: $text-primary;
+    cursor: pointer;
+    padding: $space-2;
+    border-radius: $radius-md;
+    
+    &:hover,
+    &:focus {
+      background-color: $neutral-100;
+      outline: none;
+    }
+  }
+  
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $primary-light;
+    border-bottom: 1px solid $neutral-200;
+    box-shadow: $shadow-lg;
+    padding: $space-4;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    
+    &--open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  &__link {
+    display: block;
+    padding: $space-3 $space-4;
+    color: $text-primary;
+    font-weight: $font-weight-medium;
+    border-radius: $radius-md;
+    margin-bottom: $space-2;
+    
+    &:hover,
+    &:focus {
+      background-color: $neutral-100;
+      color: $accent-green;
+    }
+    
+    &--active {
+      color: $accent-green;
+      background-color: color.adjust($accent-green, $alpha: -0.9);
+    }
+  }
+}

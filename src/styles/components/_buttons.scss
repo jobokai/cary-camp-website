@@ -1,0 +1,85 @@
+// Buttons - Park Photos Style
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-3 $space-6;
+  border: none;
+  border-radius: $radius-md;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px; // Accessibility minimum touch target
+  
+  &:focus {
+    outline: 2px solid $focus-color;
+    outline-offset: 2px;
+  }
+  
+  // Primary Button
+  &--primary {
+    background-color: $accent-green;
+    color: $text-light;
+    
+    &:hover:not(:disabled) {
+      background-color: $forest-deep;
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+  }
+  
+  // Secondary Button
+  &--secondary {
+    background-color: transparent;
+    color: $accent-green;
+    border: 2px solid $accent-green;
+    
+    &:hover:not(:disabled) {
+      background-color: $accent-green;
+      color: $text-light;
+    }
+  }
+  
+  // Large Button
+  &--large {
+    padding: $space-4 $space-8;
+    font-size: $font-size-lg;
+    border-radius: $radius-lg;
+  }
+  
+  // Small Button
+  &--small {
+    padding: $space-2 $space-4;
+    font-size: $font-size-sm;
+  }
+  
+  // Disabled State
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// CTA Button (Call to Action)
+.cta-button {
+  @extend .btn;
+  @extend .btn--primary;
+  @extend .btn--large;
+  
+  background: linear-gradient(135deg, $accent-green 0%, $forest-deep 100%);
+  border: 3px solid $text-light;
+  box-shadow: $shadow-lg;
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: $shadow-xl;
+    border-color: $sunset-amber;
+  }
+}

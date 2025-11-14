@@ -1,0 +1,20 @@
+// Main SCSS file - Park Photos inspired design for Cary Camp
+// Import order: Base → Layout → Components
+
+// Base styles
+@use 'base/variables';
+@use 'base/typography';
+@use 'base/spacing';
+@use 'base/base';
+
+// Layout styles
+@use 'layout/layout';
+@use 'layout/header';
+@use 'layout/footer';
+
+// Component styles
+@use 'components/hero';
+@use 'components/cards';
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/page-content';
