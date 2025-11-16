@@ -1,0 +1,362 @@
+// BSA Texture Overlays and Background Treatments
+@use 'sass:color';
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+// Texture Background Classes
+.texture-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  // Standard overlay treatment
+  &--overlay {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($scouting-pale-blue, $overlay-opacity);
+      z-index: 1;
+    }
+  }
+  
+  // Diagonal overlay treatment - 72 degrees
+  &--diagonal {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient($overlay-angle, 
+        $scouting-pale-blue 0%, 
+        rgba($scouting-pale-blue, $overlay-opacity) 60%, 
+        transparent 100%);
+      z-index: 1;
+    }
+    
+    // BSA Red accent stripe
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100%;
+      background: $scouting-red;
+      transform: skew($overlay-angle);
+      transform-origin: top left;
+      z-index: 2;
+    }
+  }
+  
+  // Diagonal ascending variant
+  &--diagonal-up {
+    &::before {
+      background: linear-gradient(-$overlay-angle, 
+        $scouting-pale-blue 0%, 
+        rgba($scouting-pale-blue, $overlay-opacity) 60%, 
+        transparent 100%);
+    }
+    
+    &::after {
+      transform: skew(-$overlay-angle);
+      transform-origin: top right;
+      left: auto;
+      right: 0;
+    }
+  }
+  
+  // Content positioning
+  .content {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.texture-bg-overlay--standard {
+  background-color: $scouting-dark-blue;
+  background-blend-mode: multiply;
+}
+
+// Specific texture background images - Using actual images from public folders
+.hero-campfire {
+  background-image: url('/images/hero/campfire.jpg');
+}
+
+.hero-camping {
+  background-image: url('/images/hero/camping.jpg');
+}
+
+.hero-tent {
+  background-image: url('/images/hero/tent-woods.jpg');
+}
+
+// Texture backgrounds from public/images/texture
+.texture-canvas {
+  background-image: url('/images/texture/canvas.jpg');
+}
+
+.texture-footprint {
+  background-image: url('/images/texture/footprint.jpg');
+}
+
+.texture-prairie {
+  background-image: url('/images/texture/prarie.jpg');
+}
+
+.texture-stone {
+  background-image: url('/images/texture/stone.jpg');
+}
+
+.texture-tree-rings {
+  background-image: url('/images/texture/tree-rings.jpg');
+}
+
+.texture-woodgrain {
+  background-image: url('/images/texture/woodgrain.jpg');
+}
+
+// Content Band Components
+.content-band {
+  padding: $space-12 0;
+  position: relative;
+  
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space-4;
+  }
+  
+  &__grid {
+    display: grid;
+    gap: $space-6;
+    align-items: center;
+    
+    &--two-col {
+      grid-template-columns: 1fr 1fr;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    &--three-col {
+      grid-template-columns: repeat(3, 1fr);
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    &--feature {
+      grid-template-columns: 2fr 1fr;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  
+  // Band color variants
+  &--primary {
+    background-color: $white;
+    color: $text-primary;
+  }
+  
+  &--secondary {
+    background-color: $scouting-light-tan;
+    color: $text-primary;
+  }
+  
+  &--accent {
+    background-color: $scouting-blue;
+    color: $text-light;
+  }
+  
+  &--feature {
+    background: linear-gradient(
+      135deg,
+      $scouting-pale-blue 0%,
+      $scouting-blue 100%
+    );
+    color: $text-light;
+  }
+  
+  &--testimonial {
+    background-color: $scouting-tan;
+    color: $text-primary;
+    text-align: center;
+  }
+  
+  &--stats {
+    background-color: $scouting-dark-blue;
+    color: $text-light;
+    text-align: center;
+  }
+}
+
+// Content Band Typography
+.band-content {
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+    margin-bottom: $space-4;
+    color: inherit;
+  }
+  
+  &__subtitle {
+    font-family: $font-secondary;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-medium;
+    margin-bottom: $space-3;
+    color: inherit;
+    opacity: 0.9;
+  }
+  
+  &__text {
+    font-size: $font-size-body;
+    line-height: 1.6;
+    margin-bottom: $space-4;
+    color: inherit;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__cta {
+    margin-top: $space-6;
+  }
+}
+
+// Statistics Component
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $space-6;
+  
+  &__item {
+    text-align: center;
+    padding: $space-4;
+  }
+  
+  &__number {
+    font-family: $font-primary;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    color: $scouting-gold;
+    display: block;
+    margin-bottom: $space-2;
+  }
+  
+  &__label {
+    font-family: $font-secondary;
+    font-size: $font-size-body;
+    color: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+// Feature List Component
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-3;
+    margin-bottom: $space-4;
+    
+    &::before {
+      content: '\2713';
+      color: $venturing-green;
+      font-weight: bold;
+      font-size: $font-size-lg;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__text {
+    font-size: $font-size-body;
+    line-height: 1.5;
+    color: inherit;
+  }
+}
+
+// Combined texture and overlay classes for easy use
+.hero-with-texture {
+  // Base hero styles with diagonal overlay
+  @extend .texture-bg--diagonal;
+  
+  &.campfire {
+    @extend .hero-campfire;
+  }
+  
+  &.camping {
+    @extend .hero-camping;
+  }
+  
+  &.tent {
+    @extend .hero-tent;
+  }
+}
+
+.content-with-texture {
+  // Base content band with standard overlay
+  @extend .texture-bg--overlay;
+  
+  &.canvas {
+    @extend .texture-canvas;
+  }
+  
+  &.footprint {
+    @extend .texture-footprint;
+  }
+  
+  &.prairie {
+    @extend .texture-prairie;
+  }
+  
+  &.stone {
+    @extend .texture-stone;
+  }
+  
+  &.tree-rings {
+    @extend .texture-tree-rings;
+  }
+  
+  &.woodgrain {
+    @extend .texture-woodgrain;
+  }
+}
+
+// BSA Grid Helper Classes
+.bsa-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: $space-4;
+  
+  @media (min-width: $breakpoint-md) {
+    gap: $space-6;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    gap: $space-8;
+  }
+}

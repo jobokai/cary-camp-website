@@ -18,24 +18,27 @@
     > h1 {
       text-align: center;
       margin-bottom: $space-8;
-      color: $accent-green;
-      font-family: $font-handwritten;
-      font-size: $font-size-4xl;
+      color: $scouting-blue;       // BSA Blue
+      font-family: $font-primary;  // BSA Primary font
+      font-size: $font-size-h1;    // 36-48px
+      text-transform: uppercase;    // BSA guideline
     }
     
     section {
       margin-bottom: $space-12;
       
       h2 {
-        color: $forest-deep;
-        border-bottom: 3px solid $sunset-amber;
+        color: $scouting-dark-gray;         // BSA Dark Gray
+        border-bottom: 3px solid $scouting-gold;  // BSA Gold accent
         padding-bottom: $space-2;
         margin-bottom: $space-6;
+        font-family: $font-primary;         // BSA Primary
       }
       
       h3 {
-        color: $accent-green;
+        color: $scouting-blue;              // BSA Blue
         margin-top: $space-8;
+        font-family: $font-secondary;       // BSA Secondary for attention
       }
     }
     
@@ -65,15 +68,15 @@
   // Contact page specific styling
   address {
     font-style: normal;
-    background-color: $neutral-100;
+    background-color: $scouting-light-tan;  // BSA Light Tan
     padding: $space-6;
     border-radius: $radius-lg;
-    border-left: 4px solid $accent-green;
+    border-left: 4px solid $scouting-blue;  // BSA Blue
     margin: $space-6 0;
     
     strong {
       display: block;
-      color: $accent-green;
+      color: $scouting-blue;  // BSA Blue
       font-weight: $font-weight-semibold;
       margin-bottom: $space-2;
     }
@@ -85,7 +88,7 @@
     gap: $space-6;
     align-items: flex-start;
     flex-wrap: wrap;
-    background-color: $canvas-cream;
+    background-color: $scouting-tan;  // BSA Tan
     padding: $space-6;
     border-radius: $radius-lg;
     margin: $space-6 0;
@@ -101,7 +104,7 @@
       min-width: 250px;
       
       h3 {
-        color: $forest-deep;
+        color: $scouting-dark-gray;  // BSA Dark Gray
         margin-top: 0;
         margin-bottom: $space-3;
       }
@@ -110,7 +113,7 @@
   
   // Previous rangers list
   .rangers-list {
-    background-color: $neutral-100;
+    background-color: $scouting-light-tan;  // BSA Light Tan
     padding: $space-6;
     border-radius: $radius-lg;
     
@@ -120,7 +123,7 @@
       
       li {
         padding: $space-2 0;
-        border-bottom: 1px solid $neutral-300;
+        border-bottom: 1px solid $scouting-tan;  // BSA Tan
         
         &:last-child {
           border-bottom: none;

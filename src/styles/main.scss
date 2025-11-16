@@ -1,4 +1,4 @@
-// Main SCSS file - Park Photos inspired design for Cary Camp
+// Main SCSS file - BSA Official Branding for Cary Camp
 // Import order: Base → Layout → Components
 
 // Base styles
@@ -12,9 +12,11 @@
 @use 'layout/header';
 @use 'layout/footer';
 
-// Component styles
+// Components
 @use 'components/hero';
 @use 'components/cards';
 @use 'components/buttons';
 @use 'components/forms';
 @use 'components/page-content';
+@use 'components/textures';
+@use 'components/content-bands';

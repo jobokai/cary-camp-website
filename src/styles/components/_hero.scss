@@ -1,65 +1,223 @@
-// Hero Section - Park Photos Style
+// Hero Section - BSA Branding Guidelines with Diagonal Photo Layout
+@use 'sass:color';
 @use '../base/variables' as *;
 @use '../base/spacing' as *;
 @use '../base/typography' as *;
 
 .hero {
-  background: linear-gradient(135deg, $forest-deep 0%, $accent-green 50%, $earth-brown 100%);
-  color: $text-light;
-  padding: $space-20 0;
   position: relative;
   overflow: hidden;
   
-  // Background texture overlay
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.3;
-  }
-  
-  .container {
+  // Clean diagonal hero layout inspired by BSA uniform pockets
+  &--diagonal {
     position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: $container-md;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    .hero__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: $space-12 $space-8;
+      position: relative;
+      z-index: 3;
+      
+      @media (min-width: 768px) {
+        flex: 0 0 58%;
+        padding: $space-16 $space-12 $space-16 $space-8;
+        padding-right: calc($space-12 + 220px); // Account for diagonal
+      }
+      
+      @media (min-width: 1024px) {
+        padding: $space-20 $space-12 $space-20 $space-12;
+        padding-right: calc($space-12 + 250px); // Account for diagonal
+      }
+      
+      // Diagonal overlay background
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($scouting-tan, 0.9);
+        z-index: -1;
+        
+        @media (min-width: 768px) {
+          right: -20px;
+          clip-path: polygon(0 0, 100% 0, calc(100% - 120px) 100%, 0 100%);
+        }
+        
+        @media (min-width: 1024px) {
+          right: -50px;
+          clip-path: polygon(0 0, 100% 0, calc(100% - 150px) 100%, 0 100%);
+        }
+      }
+    }
+    
+    .hero__image {
+      display: none; // Image is set as background on the container
+      
+      @media (min-width: 768px) {
+        flex: 0 0 42%;
+        position: relative;
+      }
+    }
+    
+    // Mobile stacked layout
+    @media (max-width: 767px) {
+      min-height: 80vh;
+      
+      .hero__content {
+        &::before {
+          background: rgba($scouting-pale-blue, 0.9);
+          clip-path: none;
+          right: 0;
+        }
+      }
+      
+      &::after {
+        display: none;
+      }
+    }
   }
   
   h1 {
-    font-family: $font-handwritten;
-    font-size: $font-size-5xl;
-    font-weight: $font-weight-bold;
-    margin-bottom: $space-4;
-    color: $text-light;
-    
-    // Hand-drawn text shadow effect
-    text-shadow: 
-      2px 2px 0px $forest-deep,
-      4px 4px 8px rgba(0,0,0,0.3);
+    font-family: $font-primary;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: $font-weight-extrabold;
+    text-transform: uppercase;
+    margin-bottom: $space-6;
+    color: $scouting-red;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
   }
   
   &__motto {
-    font-family: $font-accent;
-    font-size: $font-size-xl;
-    color: $sunset-amber;
+    font-family: $font-secondary;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: $scouting-blue;
     font-weight: $font-weight-medium;
-    margin-bottom: $space-6;
-    font-style: italic;
+    margin-bottom: $space-8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
   
   &__description {
-    font-size: $font-size-lg;
-    line-height: $line-height-relaxed;
-    margin-bottom: $space-8;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    font-family: $font-tertiary;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    margin-bottom: $space-10;
+    color: $scouting-dark-gray;
+    max-width: 480px;    
+  }
+  
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-3;
+    padding: $space-4 $space-8;
+    background: $scouting-dark-blue;
+    color: $white;
+    text-decoration: none;
+    border-radius: $radius-base;
+    font-family: $font-secondary;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+
+    &:hover {
+      background: color.scale($scouting-red, $lightness: -8%);
+      color: $white;
+    }
+    
+    &:focus {
+      outline: 3px solid rgba($scouting-red, 0.6);
+      outline-offset: 2px;
+    }
+  }
+
+  // Hero theme variations following BSA color palette
+  &--tan-theme {
+    .hero__content::before {
+      background: rgba($scouting-tan, 0.95) !important;
+    }
+    
+    .hero__content {
+      h1 {
+        color: $scouting-dark-blue;
+        text-shadow: none;
+      }
+      
+      .hero__description {
+        color: $scouting-dark-gray;
+      }
+      
+      .hero__motto {
+        color: $scouting-red;
+      }
+    }
+  }
+
+  &--blue-theme {
+    .hero__content::before {
+      background: rgba($scouting-blue, 0.95) !important;
+    }
+    
+    .hero__content {
+      h1, .hero__description, .hero__motto {
+        color: $white;
+      }
+      
+      h1 {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+    }
+  }
+
+  // Direction variation - content on right, image on left  
+  &--diagonal-left {
+    .hero__content {
+      order: 2;
+      
+      @media (min-width: 768px) {
+        padding-left: calc($space-12 + 120px);
+        padding-right: $space-12;
+        
+        &::before {
+          left: -120px;
+          right: 0;
+          clip-path: polygon(120px 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        padding-left: calc($space-16 + 150px);
+        padding-right: $space-16;
+        
+        &::before {
+          left: -150px;
+          clip-path: polygon(150px 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+    }
+    
+    &::after {
+      @media (min-width: 768px) {
+        left: calc(42% + 60px);
+        transform: skewX(18deg);
+      }
+      
+      @media (min-width: 1024px) {
+        left: calc(42% + 75px);
+      }
+    }
   }
 }

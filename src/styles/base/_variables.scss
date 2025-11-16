@@ -1,39 +1,35 @@
-// Variables - Color Palette inspired by park.photos with camp theming
-// Natural outdoor photography colors with warm earth tones
+// Variables - BSA Official Branding Colors
+// Following BSA Digital Resource Guidelines for Cary Camp
 
-// Primary Colors - Park Photos Style
-$primary-dark: #1a1a1a;        // Deep charcoal for text
-$primary-light: #ffffff;       // Clean white
-$accent-green: #2d5a42;        // Forest green for nature themes
-$accent-warm: #d49c3d;         // Warm golden amber
+// BSA Primary Brand Colors
+$scouting-red: #ce1126;
+$scouting-blue: #003f87;
+$scouting-tan: #dbcebd;
+$scouting-warm-gray: #515354;
+$white: #ffffff;
 
-// Secondary Colors
-$neutral-100: #f8f9fa;         // Light gray backgrounds
-$neutral-200: #e9ecef;         // Border colors
-$neutral-300: #dee2e6;         // Subtle borders
-$neutral-400: #ced4da;         // Muted text
-$neutral-500: #adb5bd;         // Secondary text
-$neutral-600: #6c757d;         // Body text secondary
-$neutral-700: #495057;         // Body text primary
-$neutral-800: #343a40;         // Headings
-$neutral-900: #212529;         // Dark text
+// BSA Secondary Colors - Additional Shades
+$scouting-pale-blue: #9ab3d5;
+$scouting-dark-blue: #003366;
+$scouting-light-tan: #e9e9e4;
+$scouting-dark-tan: #ad9d7b;
+$scouting-pale-gray: #858787;
+$scouting-dark-gray: #232528;
 
-// Camp-specific Colors
-$forest-deep: #1e3a1a;         // Deep forest green
-$earth-brown: #8b5a3c;         // Rich earth brown
-$sunset-amber: #d49c3d;        // Sunset amber
-$stone-gray: #a0a0a0;          // Natural stone
-$canvas-cream: #faf8f3;        // Warm cream background
+// BSA Tertiary Colors - Sparingly Used Accents
+$scouting-gold: #fdc116;
+$scouting-olive: #243e2c;
+$venturing-green: #006b3f;
 
 // Accessibility Colors (WCAG AA compliant)
-$text-primary: $neutral-900;
-$text-secondary: $neutral-600;
-$text-muted: $neutral-500;
-$text-light: $primary-light;
-$link-color: $accent-green;
-$link-hover: $forest-deep;
-$focus-color: #4a7c59;
+$text-primary: $scouting-dark-gray;
+$text-secondary: $scouting-warm-gray;
+$text-muted: $scouting-pale-gray;
+$text-light: $white;
+$link-color: $scouting-blue;
+$link-hover: $scouting-dark-blue;
+$focus-color: $scouting-red;
 $error-color: #dc3545;
-$success-color: #28a745;
-$warning-color: #ffc107;
-$info-color: #17a2b8;
+$success-color: $venturing-green;
+$warning-color: $scouting-gold;
+$info-color: $scouting-pale-blue;

@@ -19,30 +19,30 @@
   min-height: 44px; // Accessibility minimum touch target
   
   &:focus {
-    outline: 2px solid $focus-color;
+    outline: 2px solid $focus-color;  // BSA Red for focus
     outline-offset: 2px;
   }
   
-  // Primary Button
+  // Primary Button - BSA Blue
   &--primary {
-    background-color: $accent-green;
+    background-color: $scouting-blue;  // BSA Blue
     color: $text-light;
     
     &:hover:not(:disabled) {
-      background-color: $forest-deep;
+      background-color: $scouting-dark-blue;  // BSA Dark Blue
       transform: translateY(-1px);
       box-shadow: $shadow-md;
     }
   }
   
-  // Secondary Button
+  // Secondary Button - BSA Red
   &--secondary {
     background-color: transparent;
-    color: $accent-green;
-    border: 2px solid $accent-green;
+    color: $scouting-red;  // BSA Red
+    border: 2px solid $scouting-red;
     
     &:hover:not(:disabled) {
-      background-color: $accent-green;
+      background-color: $scouting-red;
       color: $text-light;
     }
   }
@@ -67,19 +67,19 @@
   }
 }
 
-// CTA Button (Call to Action)
+// CTA Button (Call to Action) - BSA Branding
 .cta-button {
   @extend .btn;
   @extend .btn--primary;
   @extend .btn--large;
   
-  background: linear-gradient(135deg, $accent-green 0%, $forest-deep 100%);
-  border: 3px solid $text-light;
+  background: linear-gradient(135deg, $scouting-blue 0%, $scouting-dark-blue 100%);
+  border: 3px solid $white;
   box-shadow: $shadow-lg;
   
   &:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: $shadow-xl;
-    border-color: $sunset-amber;
+    border-color: $scouting-gold;  // BSA Gold accent
   }
 }

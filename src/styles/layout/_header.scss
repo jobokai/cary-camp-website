@@ -1,16 +1,17 @@
-// Header Navigation - Park Photos Style
+// Header Navigation - Camp Tecumseh Inspired Modern Design
 @use 'sass:color';
 @use '../base/variables' as *;
 @use '../base/spacing' as *;
 @use '../base/typography' as *;
 
 .header {
-  background-color: $primary-light;
-  border-bottom: 1px solid $neutral-200;
+  background-color: $white;
+  border-bottom: 1px solid $scouting-light-tan;
   position: sticky;
   top: 0;
   z-index: $z-sticky;
   backdrop-filter: blur(10px);
+  box-shadow: $shadow-sm;
   
   .container {
     display: flex;
@@ -21,49 +22,194 @@
     @media (min-width: $breakpoint-md) {
       padding: $space-6 $space-6;
     }
+    
+    @media (min-width: $breakpoint-lg) {
+      padding: $space-6 $space-8;
+    }
   }
 }
 
 .logo {
-  font-family: $font-handwritten;
-  font-size: $font-size-2xl;
-  font-weight: $font-weight-bold;
-  color: $accent-green;
-  text-decoration: none;
   display: flex;
   align-items: center;
-  gap: $space-3;
+  gap: $space-4;
+  text-decoration: none;
+  color: inherit;
+  
+  &__image {
+    height: 48px;
+    width: 48px;
+    flex-shrink: 0;
+    
+    @media (min-width: $breakpoint-md) {
+      height: 56px;
+      width: 56px;
+    }
+    
+    @media (min-width: $breakpoint-lg) {
+      height: 64px;
+      width: 64px;
+    }
+  }
+  
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  &__title {
+    font-family: $font-primary;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: $font-weight-bold;
+    color: $scouting-blue;
+    line-height: 1.2;
+  }
+  
+  &__tagline {
+    font-family: $font-secondary;
+    font-size: clamp(0.65rem, 1.5vw, 0.875rem);
+    color: $scouting-warm-gray;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 2px;
+    
+    @media (max-width: $breakpoint-sm) {
+      display: none; // Hide tagline on very small screens
+    }
+  }
   
   &:hover {
-    color: $forest-deep;
+    .logo__title {
+      color: $scouting-dark-blue;
+    }
+    
+    .logo__image {
+      transform: scale(1.05);
+      transition: transform 0.2s ease;
+    }
   }
 }
 
 .nav {
   display: none;
   
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     display: flex;
     align-items: center;
     gap: $space-8;
   }
   
   &__link {
+    font-family: $font-secondary;
     font-weight: $font-weight-medium;
+    font-size: 0.95rem;
     color: $text-primary;
-    padding: $space-2 $space-3;
+    padding: $space-3 $space-4;
     border-radius: $radius-md;
     transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    display: flex;
+    align-items: center;
+    gap: $space-1;
     
     &:hover,
     &:focus {
-      color: $accent-green;
-      background-color: color.adjust($accent-green, $alpha: -0.9);
+      color: $scouting-blue;
+      background-color: color.adjust($scouting-pale-blue, $alpha: -0.9);
     }
     
     &--active {
-      color: $accent-green;
-      background-color: color.adjust($accent-green, $alpha: -0.9);
+      color: $scouting-blue;
+      background-color: color.adjust($scouting-pale-blue, $alpha: -0.85);
+    }
+    
+    &--dropdown {
+      cursor: pointer;
+    }
+  }
+  
+  &__dropdown {
+    position: relative;
+    
+    &-icon {
+      transition: transform 0.2s ease;
+      margin-left: $space-1;
+    }
+    
+    &-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: $white;
+      min-width: 200px;
+      border-radius: $radius-lg;
+      box-shadow: $shadow-xl;
+      border: 1px solid $scouting-light-tan;
+      padding: $space-4;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.2s ease;
+      z-index: 100;
+      
+      &--open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+    
+    &-link {
+      display: block;
+      padding: $space-3 $space-4;
+      color: $text-primary;
+      font-family: $font-tertiary;
+      font-size: 0.9rem;
+      border-radius: $radius-md;
+      transition: all 0.2s ease;
+      text-transform: none;
+      letter-spacing: 0;
+      
+      &:hover {
+        color: $scouting-blue;
+        background-color: color.adjust($scouting-pale-blue, $alpha: -0.9);
+      }
+      
+      &:not(:last-child) {
+        margin-bottom: $space-2;
+      }
+    }
+    
+    &:hover &-icon {
+      transform: rotate(180deg);
+    }
+  }
+  
+  &__cta {
+    background: $scouting-red;
+    color: $white;
+    padding: $space-3 $space-6;
+    border-radius: $radius-full;
+    font-family: $font-secondary;
+    font-weight: $font-weight-semibold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba($scouting-red, 0.3);
+    
+    &:hover {
+      background: color.scale($scouting-red, $lightness: -8%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba($scouting-red, 0.4);
+    }
+    
+    &:active {
+      transform: translateY(0);
     }
   }
 }
@@ -72,24 +218,38 @@
 .mobile-nav {
   display: block;
   
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     display: none;
   }
   
   &__toggle {
     background: none;
     border: none;
-    font-size: $font-size-xl;
-    color: $text-primary;
     cursor: pointer;
     padding: $space-2;
     border-radius: $radius-md;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
     
     &:hover,
     &:focus {
-      background-color: $neutral-100;
+      background-color: $scouting-light-tan;
       outline: none;
     }
+  }
+  
+  &__bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: $text-primary;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
   
   &__menu {
@@ -97,14 +257,16 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: $primary-light;
-    border-bottom: 1px solid $neutral-200;
-    box-shadow: $shadow-lg;
-    padding: $space-4;
+    background-color: $white;
+    border-bottom: 1px solid $scouting-light-tan;
+    box-shadow: $shadow-xl;
+    padding: $space-6 $space-4;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
     
     &--open {
       transform: translateY(0);
@@ -115,21 +277,88 @@
   
   &__link {
     display: block;
-    padding: $space-3 $space-4;
+    padding: $space-4;
     color: $text-primary;
+    font-family: $font-secondary;
     font-weight: $font-weight-medium;
     border-radius: $radius-md;
     margin-bottom: $space-2;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    font-size: 0.95rem;
     
     &:hover,
     &:focus {
-      background-color: $neutral-100;
-      color: $accent-green;
+      background-color: $scouting-light-tan;
+      color: $scouting-blue;
     }
     
     &--active {
-      color: $accent-green;
-      background-color: color.adjust($accent-green, $alpha: -0.9);
+      color: $scouting-blue;
+      background-color: color.adjust($scouting-pale-blue, $alpha: -0.85);
+    }
+  }
+  
+  &__dropdown {
+    margin-bottom: $space-2;
+    
+    summary {
+      padding: $space-4;
+      color: $text-primary;
+      font-family: $font-secondary;
+      font-weight: $font-weight-medium;
+      border-radius: $radius-md;
+      cursor: pointer;
+      list-style: none;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      font-size: 0.95rem;
+      
+      &:hover {
+        background-color: $scouting-light-tan;
+        color: $scouting-blue;
+      }
+      
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+  }
+  
+  &__dropdown-menu {
+    padding-left: $space-4;
+    margin-top: $space-2;
+    
+    .mobile-nav__link {
+      font-size: 0.9rem;
+      text-transform: none;
+      color: $scouting-warm-gray;
+      margin-bottom: $space-1;
+      padding: $space-3;
+      
+      &:hover {
+        color: $scouting-blue;
+      }
+    }
+  }
+  
+  &__cta {
+    display: block;
+    background: $scouting-red;
+    color: $white;
+    padding: $space-4 $space-6;
+    border-radius: $radius-full;
+    font-family: $font-secondary;
+    font-weight: $font-weight-semibold;
+    text-align: center;
+    text-decoration: none;
+    margin-top: $space-4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    
+    &:hover {
+      background: color.scale($scouting-red, $lightness: -8%);
     }
   }
 }

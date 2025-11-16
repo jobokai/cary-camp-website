@@ -4,7 +4,7 @@
 @use '../base/typography' as *;
 
 .footer {
-  background-color: $neutral-800;
+  background-color: $scouting-dark-gray;  // BSA Dark Gray
   color: $text-light;
   padding: $space-16 0 $space-8 0;
   
@@ -19,15 +19,16 @@
   
   &__section {
     h3 {
-      font-family: $font-handwritten;
-      font-size: $font-size-xl;
-      color: $sunset-amber;
+      font-family: $font-primary;  // BSA Primary for attention
+      font-size: $font-size-h3;     // 24-32px
+      color: $scouting-gold;        // BSA Gold
       margin-bottom: $space-4;
     }
     
     p {
-      color: $neutral-300;
+      color: $scouting-light-tan;   // BSA Light Tan
       line-height: $line-height-relaxed;
+      font-family: $font-tertiary;  // BSA Tertiary
     }
     
     ul {
@@ -40,25 +41,27 @@
     }
     
     a {
-      color: $neutral-300;
+      color: $scouting-light-tan;   // BSA Light Tan
       transition: color 0.2s ease;
+      font-weight: bold;
       
       &:hover {
-        color: $sunset-amber;
+        color: $scouting-gold;      // BSA Gold
       }
     }
   }
   
   &__bottom {
-    border-top: 1px solid $neutral-600;
+    border-top: 1px solid $scouting-light-tan;  // BSA Light Tan
     margin-top: $space-8;
     padding-top: $space-6;
     text-align: center;
-    color: $neutral-400;
-    font-size: $font-size-sm;
+    color: $scouting-light-tan;  // BSA Light Tan
+    font-size: $font-size-small;
     
     p {
       margin-bottom: 0;
+      font-family: $font-tertiary;  // BSA Tertiary
     }
   }
 }

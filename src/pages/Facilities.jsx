@@ -1,15 +1,26 @@
 import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import Hero from '../components/Hero'
 
 export default function Facilities() {
   return (
     <Layout title="Facilities - Cary Camp">
+      <Hero
+        title="Camp Facilities"
+        motto="Adventure Awaits"
+        description="Cary Camp has a wide variety of facilities available for rental: campsites, cabins, shelters, McAllister Scouting Center, a trading post, health lodge, recreational facilities and an outdoor chapel."
+        ctaText="Plan Your Stay"
+        ctaLink="#facilities-grid"
+        image="/images/hero/camping.jpg"
+        imageAlt="Camping facilities at Cary Camp showing cabins and outdoor areas"
+        variant="diagonal"
+        theme="tan"
+        direction="left"
+      />
+      
       <div className="page-content">
         <div className="container">
-          <h1>Facilities</h1>
-          <p>Cary Camp has a wide variety of facilities available for rental: campsites, cabins, shelters, McAllister Scouting Center, a trading post, health lodge, recreational facilities and an outdoor chapel.</p>
-          
-          <div className="facilities-grid">
+          <div id="facilities-grid" className="facilities-grid">
             <article className="facility-card">
               <div className="card__content">
                 <h3><Link to="/facilities/campsites">Campsites</Link></h3>

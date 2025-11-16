@@ -1,27 +1,26 @@
-import { Link } from 'react-router-dom'
+import Hero from '../components/Hero'
 import Layout from '../components/Layout'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
     <Layout title="Franklin L. Cary Camp">
-      <section className="hero">
-        <div className="container">
-          <h1>Franklin L. Cary Camp</h1>
-          <p className="hero__motto">Your Backyard Wilderness</p>
-          <p className="hero__description">
-            Franklin Levering Cary Camp is 125 wooded acres just east of Lafayette, Indiana. 
-            Operated by the Sagamore Council, Boy Scouts of America, our camp offers Cub Scout programs, 
-            camping facilities, and outdoor adventures for Scout groups and the general public.
-          </p>
-          <Link to="/facilities" className="cta-button">
-            Explore Our Facilities
-          </Link>
-        </div>
-      </section>
+      <Hero
+        title="Your Backyard Wilderness"
+        description="Franklin Levering Cary Camp is 125 wooded acres just east of Lafayette, Indiana. Operated by the Sagamore Council, Boy Scouts of America, our camp offers Cub Scout programs, camping facilities, and outdoor adventures for Scout groups and the general public."
+        ctaText="Explore Our Facilities"
+        ctaLink="/facilities"
+        image="/images/hero/campfire-flip.png"
+        imageAlt="Scouts gathered around a campfire at dusk in the wooded camp setting"
+        variant="diagonal"
+        direction="right"
+      />
 
       <section className="section">
         <div className="container">
-          <h2>Welcome to Cary Camp</h2>
+          <div className="bsa-grid" style={{ gridColumn: 'span 6' }}>
+            <h2 style={{ gridColumn: 'span 6', textAlign: 'center' }}>Welcome to Cary Camp</h2>
+          </div>
           
           <div className="content-grid">
             <article className="card">

@@ -22,24 +22,24 @@ html {
 }
 
 body {
-  font-family: $font-primary;
-  font-size: $font-size-base;
+  font-family: $font-tertiary;  // BSA Tertiary font for body copy
+  font-size: $font-size-body;
   font-weight: $font-weight-normal;
   color: $text-primary;
-  background-color: $primary-light;
+  background-color: $white;
   line-height: $line-height-normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Typography Elements
+// Typography Elements - BSA Guidelines
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $font-heading;
+  font-family: $font-primary;  // BSA Primary font for headings 16px+
   font-weight: $font-weight-semibold;
   line-height: $line-height-tight;
   color: $text-primary;
@@ -50,30 +50,40 @@ h6 {
   }
 }
 
-h1 { font-size: $font-size-4xl; }
-h2 { font-size: $font-size-3xl; }
-h3 { font-size: $font-size-2xl; }
-h4 { font-size: $font-size-xl; }
-h5 { font-size: $font-size-lg; }
-h6 { font-size: $font-size-base; }
+// BSA Typography Scale
+h1 { 
+  font-size: $font-size-h1;  // 36-48px - Main sections
+  text-transform: uppercase; // BSA guideline for emphasis
+}
+h2 { 
+  font-size: $font-size-h2;  // 32-40px - Main sections  
+}
+h3 { 
+  font-size: $font-size-h3;  // 24-32px - Secondary items
+  font-family: $font-secondary; // Can use secondary font for special attention
+}
+h4 { font-size: $font-size-h4; }
+h5 { font-size: $font-size-h5; }
+h6 { font-size: $font-size-h6; }
 
 p {
   margin-bottom: $space-4;
   line-height: $line-height-relaxed;
+  font-size: $font-size-body;  // BSA body text sizing
 }
 
-// Links
+// Links - BSA Blue
 a {
-  color: $link-color;
+  color: $link-color;  // BSA Blue
   text-decoration: none;
   transition: color 0.2s ease;
   
   &:hover {
-    color: $link-hover;
+    color: $link-hover;  // BSA Dark Blue
   }
   
   &:focus {
-    outline: 2px solid $focus-color;
+    outline: 2px solid $focus-color;  // BSA Red for focus
     outline-offset: 2px;
   }
 }

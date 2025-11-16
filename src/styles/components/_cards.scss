@@ -4,12 +4,12 @@
 @use '../base/typography' as *;
 
 .card {
-  background-color: $primary-light;
+  background-color: $white;
   border-radius: $radius-lg;
   box-shadow: $shadow-sm;
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid $neutral-200;
+  border: 1px solid $scouting-light-tan;  // BSA Light Tan borders
   
   &:hover {
     transform: translateY(-2px);
@@ -31,8 +31,8 @@
   }
   
   &__title {
-    font-family: $font-heading;
-    font-size: $font-size-xl;
+    font-family: $font-primary;  // BSA Primary font
+    font-size: $font-size-h3;    // 24-32px
     font-weight: $font-weight-semibold;
     color: $text-primary;
     margin-bottom: $space-3;
@@ -42,7 +42,7 @@
       text-decoration: none;
       
       &:hover {
-        color: $accent-green;
+        color: $scouting-blue;  // BSA Blue
       }
     }
   }
@@ -51,10 +51,11 @@
     color: $text-secondary;
     line-height: $line-height-relaxed;
     margin-bottom: $space-4;
+    font-family: $font-tertiary;  // BSA Tertiary for body copy
   }
   
   &__link {
-    color: $accent-green;
+    color: $scouting-blue;  // BSA Blue
     font-weight: $font-weight-medium;
     text-decoration: none;
     display: inline-flex;
@@ -62,7 +63,7 @@
     gap: $space-2;
     
     &:hover {
-      color: $forest-deep;
+      color: $scouting-dark-blue;  // BSA Dark Blue
     }
     
     &::after {
@@ -95,12 +96,12 @@
     margin-bottom: $space-4;
     
     a {
-      color: $accent-green;
+      color: $scouting-blue;  // BSA Blue
       text-decoration: none;
       font-weight: $font-weight-semibold;
       
       &:hover {
-        color: $forest-deep;
+        color: $scouting-dark-blue;  // BSA Dark Blue
       }
     }
   }
@@ -109,5 +110,6 @@
     color: $text-secondary;
     line-height: $line-height-relaxed;
     margin-bottom: 0;
+    font-family: $font-tertiary;  // BSA Tertiary
   }
 }

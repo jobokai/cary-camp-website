@@ -1,4 +1,4 @@
-// Forms - Park Photos Style
+// Forms - BSA Style
 @use '../base/variables' as *;
 @use '../base/spacing' as *;
 @use '../base/typography' as *;
@@ -19,18 +19,18 @@
   &__textarea {
     width: 100%;
     padding: $space-3;
-    border: 2px solid $neutral-300;
+    border: 2px solid $scouting-pale-gray;
     border-radius: $radius-md;
     font-family: $font-primary;
     font-size: $font-size-base;
     color: $text-primary;
-    background-color: $primary-light;
+    background-color: $white;
     transition: border-color 0.2s ease;
     
     &:focus {
       outline: none;
-      border-color: $accent-green;
-      box-shadow: 0 0 0 3px rgba($accent-green, 0.1);
+      border-color: $scouting-blue;
+      box-shadow: 0 0 0 3px rgba($scouting-blue, 0.1);
     }
     
     &::placeholder {

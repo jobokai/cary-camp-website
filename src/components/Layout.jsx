@@ -1,8 +1,10 @@
-import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+
+import { useState } from 'react'
 
 export default function Layout({ children, title, description }) {
   const [navOpen, setNavOpen] = useState(false)
+  const [facilitiesOpen, setFacilitiesOpen] = useState(false)
   const location = useLocation()
   
   const isActive = (path) => location.pathname === path || location.pathname === path + '.html'
@@ -14,7 +16,11 @@ export default function Layout({ children, title, description }) {
       <header className="header" role="banner">
         <div className="container">
           <Link to="/" className="logo" aria-label="Cary Camp Home">
-            🏕️ Franklin L. Cary Camp
+            <img src="/images/CaryCampPatch_transparent.png" alt="Cary Camp Logo" className="logo__image" />
+            <div className="logo__text">
+              <span className="logo__title">Franklin L. Cary Camp</span>
+              <span className="logo__tagline">Your Backyard Wilderness</span>
+            </div>
           </Link>
           
           <nav className="nav" role="navigation" aria-label="Main navigation">
@@ -30,21 +36,40 @@ export default function Layout({ children, title, description }) {
               className={`nav__link ${isActive('/about') ? 'nav__link--active' : ''}`}
               {...(isActive('/about') && {'aria-current': 'page'})}
             >
-              About
+              About Us
             </Link>
-            <Link 
-              to="/facilities" 
-              className={`nav__link ${location.pathname.startsWith('/facilities') ? 'nav__link--active' : ''}`}
-              {...(location.pathname.startsWith('/facilities') && {'aria-current': 'page'})}
+            <div 
+              className="nav__dropdown"
+              onMouseEnter={() => setFacilitiesOpen(true)}
+              onMouseLeave={() => setFacilitiesOpen(false)}
             >
-              Facilities
-            </Link>
+              <Link 
+                to="/facilities" 
+                className={`nav__link nav__link--dropdown ${location.pathname.startsWith('/facilities') ? 'nav__link--active' : ''}`}
+                {...(location.pathname.startsWith('/facilities') && {'aria-current': 'page'})}
+              >
+                What We Offer
+                <svg className="nav__dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+              <div className={`nav__dropdown-menu ${facilitiesOpen ? 'nav__dropdown-menu--open' : ''}`}>
+                <Link to="/facilities" className="nav__dropdown-link">All Facilities</Link>
+                <Link to="/facilities/campsites" className="nav__dropdown-link">Campsites</Link>
+                <Link to="/facilities/cabins" className="nav__dropdown-link">Cabins & Lodging</Link>
+                <Link to="/facilities/mcallister" className="nav__dropdown-link">Meeting Spaces</Link>
+                <Link to="/facilities/recreational" className="nav__dropdown-link">Activities</Link>
+              </div>
+            </div>
             <Link 
               to="/contact" 
               className={`nav__link ${isActive('/contact') ? 'nav__link--active' : ''}`}
               {...(isActive('/contact') && {'aria-current': 'page'})}
             >
               Contact
+            </Link>
+            <Link to="/facilities" className="nav__cta">
+              Plan Your Visit
             </Link>
           </nav>
           
@@ -56,7 +81,9 @@ export default function Layout({ children, title, description }) {
               aria-label="Toggle navigation menu"
               onClick={() => setNavOpen(!navOpen)}
             >
-              ☰
+              <span className="mobile-nav__bar"></span>
+              <span className="mobile-nav__bar"></span>
+              <span className="mobile-nav__bar"></span>
             </button>
             
             <div id="mobile-menu" className={`mobile-nav__menu ${navOpen ? 'mobile-nav__menu--open' : ''}`}>
@@ -72,21 +99,61 @@ export default function Layout({ children, title, description }) {
                 className={`mobile-nav__link ${isActive('/about') ? 'mobile-nav__link--active' : ''}`}
                 onClick={() => setNavOpen(false)}
               >
-                About
+                About Us
               </Link>
-              <Link 
-                to="/facilities" 
-                className={`mobile-nav__link ${location.pathname.startsWith('/facilities') ? 'mobile-nav__link--active' : ''}`}
-                onClick={() => setNavOpen(false)}
-              >
-                Facilities
-              </Link>
+              <details className="mobile-nav__dropdown">
+                <summary className="mobile-nav__dropdown-toggle">What We Offer</summary>
+                <div className="mobile-nav__dropdown-menu">
+                  <Link 
+                    to="/facilities" 
+                    className={`mobile-nav__link ${location.pathname.startsWith('/facilities') ? 'mobile-nav__link--active' : ''}`}
+                    onClick={() => setNavOpen(false)}
+                  >
+                    All Facilities
+                  </Link>
+                  <Link 
+                    to="/facilities/campsites" 
+                    className="mobile-nav__link"
+                    onClick={() => setNavOpen(false)}
+                  >
+                    Campsites
+                  </Link>
+                  <Link 
+                    to="/facilities/cabins" 
+                    className="mobile-nav__link"
+                    onClick={() => setNavOpen(false)}
+                  >
+                    Cabins & Lodging
+                  </Link>
+                  <Link 
+                    to="/facilities/mcallister" 
+                    className="mobile-nav__link"
+                    onClick={() => setNavOpen(false)}
+                  >
+                    Meeting Spaces
+                  </Link>
+                  <Link 
+                    to="/facilities/recreational" 
+                    className="mobile-nav__link"
+                    onClick={() => setNavOpen(false)}
+                  >
+                    Activities
+                  </Link>
+                </div>
+              </details>
               <Link 
                 to="/contact" 
                 className={`mobile-nav__link ${isActive('/contact') ? 'mobile-nav__link--active' : ''}`}
                 onClick={() => setNavOpen(false)}
               >
                 Contact
+              </Link>
+              <Link 
+                to="/facilities" 
+                className="mobile-nav__cta"
+                onClick={() => setNavOpen(false)}
+              >
+                Plan Your Visit
               </Link>
             </div>
           </div>
@@ -97,7 +164,7 @@ export default function Layout({ children, title, description }) {
         {children}
       </main>
       
-      <footer className="footer" role="contentinfo">
+      <footer className="footer texture-tree-rings texture-bg texture-bg-overlay--standard" role="contentinfo">
         <div className="container">
           <div className="footer__section">
             <h3>Franklin L. Cary Camp</h3>
