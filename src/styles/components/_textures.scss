@@ -124,44 +124,15 @@
   background-color: $scouting-dark-tan;
   background-blend-mode: multiply;
 }
-
-// Specific texture background images - Using actual images from public folders
-.hero-campfire {
-  background-image: url('/images/hero/campfire.jpg');
-}
-
-.hero-camping {
-  background-image: url('/images/hero/camping.jpg');
-}
-
-.hero-tent {
-  background-image: url('/images/hero/tent-woods.jpg');
-}
-
 // Texture backgrounds from public/images/texture
-.texture-canvas {
-  background-image: url('/images/texture/canvas-bw.jpg');
-}
-
-.texture-footprint {
-  background-image: url('/images/texture/footprint-bw.jpg');
-}
-
-.texture-prairie {
-  background-image: url('/images/texture/prarie-bw.jpg');
-}
-
-.texture-stone {
-  background-image: url('/images/texture/stone.jpg');
-}
 
 .texture-tree-rings {
   background-image: url('/images/texture/tree-rings-bwg.jpg');
 }
 
-.texture-woodgrain {
-  background-image: url('/images/texture/woodgrain-bw.jpg');
-}
+// .texture-woodgrain {
+//   background-image: url('/images/texture/woodgrain-bw.jpg');
+// }
 
 // Content Band Components
 .content-band {
@@ -339,51 +310,17 @@
   }
 }
 
-// Combined texture and overlay classes for easy use
-.hero-with-texture {
-  // Base hero styles with diagonal overlay
-  @extend .texture-bg--diagonal;
-  
-  &.campfire {
-    @extend .hero-campfire;
-  }
-  
-  &.camping {
-    @extend .hero-camping;
-  }
-  
-  &.tent {
-    @extend .hero-tent;
-  }
-}
-
 .content-with-texture {
   // Base content band with standard overlay
   @extend .texture-bg--overlay;
-  
-  &.canvas {
-    @extend .texture-canvas;
-  }
-  
-  &.footprint {
-    @extend .texture-footprint;
-  }
-  
-  &.prairie {
-    @extend .texture-prairie;
-  }
-  
-  &.stone {
-    @extend .texture-stone;
-  }
   
   &.tree-rings {
     @extend .texture-tree-rings;
   }
   
-  &.woodgrain {
-    @extend .texture-woodgrain;
-  }
+  // &.woodgrain {
+  //   @extend .texture-woodgrain;
+  // }
 }
 
 // BSA Grid Helper Classes
