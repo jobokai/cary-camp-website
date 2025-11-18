@@ -9,7 +9,7 @@ export default function Contact() {
             <h1>Contact Cary Camp</h1>
             
             <section>
-              <h2>Current Ranger</h2>
+              <h2>Ranger</h2>
               <div className="ranger-info">
                 <img 
                   src="https://www.carycamp.com/ranger/wellner.jpg" 
@@ -36,6 +36,11 @@ export default function Contact() {
             <section>
               <h2>Previous Rangers</h2>
               <div className="rangers-list">
+                
+                <img 
+                  src="https://www.carycamp.com/ranger/rangers.png" 
+                  alt="Ranger Recognition Plaque showing the history of Cary Camp Rangers"
+                />
                 <ul>
                   <li>Charles "Chuck" Turner (2010-2014)</li>
                   <li>George Nelson (1999-2010)</li>
@@ -45,10 +50,6 @@ export default function Contact() {
                   <li>Marshall Leming (?-1954)</li>
                   <li>Frank Meyers</li>
                 </ul>
-                <img 
-                  src="https://www.carycamp.com/ranger/rangers.png" 
-                  alt="Ranger Recognition Plaque showing the history of Cary Camp Rangers"
-                />
               </div>
             </section>
           </article>

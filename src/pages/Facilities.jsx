@@ -1,73 +1,91 @@
-import { Link } from 'react-router-dom'
-import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Layout from '../components/Layout'
+import { Link } from 'react-router-dom'
 
 export default function Facilities() {
   return (
     <Layout title="Facilities - Cary Camp">
-      <Hero
-        title="Camp Facilities"
-        motto="Adventure Awaits"
-        description="Cary Camp has a wide variety of facilities available for rental: campsites, cabins, shelters, McAllister Scouting Center, a trading post, health lodge, recreational facilities and an outdoor chapel."
-        ctaText="Plan Your Stay"
-        ctaLink="#facilities-grid"
-        image="/images/hero/camping.jpg"
-        imageAlt="Camping facilities at Cary Camp showing cabins and outdoor areas"
-        variant="diagonal"
-        theme="tan"
-        direction="left"
-      />
-      
-      <div className="page-content">
-        <div className="container">
-          <div id="facilities-grid" className="facilities-grid">
-            <article className="facility-card">
-              <div className="card__content">
-                <h3><Link to="/facilities/campsites">Campsites</Link></h3>
-                <p>Five campsites with running water, sanitary facilities, and picnic tables under permanent shelter roofs.</p>
-              </div>
-            </article>
-            
-            <article className="facility-card">
-              <div className="card__content">
-                <h3><Link to="/facilities/cabins">Cabins</Link></h3>
-                <p>Three cabins: Tecumseh Lodge, Shawnee Cabin, and Sioux Cabin with varying capacities and amenities.</p>
-              </div>
-            </article>
-            
-            <article className="facility-card">
-              <div className="card__content">
-                <h3><Link to="/facilities/shelters">Shelters</Link></h3>
-                <p>Six shelter houses, all wired for electricity with various amenities for groups and events.</p>
-              </div>
-            </article>
-            
-            <article className="facility-card">
-              <div className="card__content">
-                <h3><Link to="/facilities/mcallister">McAllister Scouting Center</Link></h3>
-                <p>Large and small meeting rooms, commercial kitchen, and training rooms with audiovisual capabilities.</p>
-              </div>
-            </article>
-            
-            <article className="facility-card">
-              <div className="card__content">
-                <h3><Link to="/facilities/trade">Trading Post</Link></h3>
-                <p>Scout shop with rank advancement emblems, insignia, camping gear, and summer camp merchandise.</p>
-              </div>
-            </article>
-            
-            <article className="facility-card">
-              <div className="card__content">
-                <h3><Link to="/facilities/recreational">Recreational Facilities</Link></h3>
-                <p>Swimming pool, rifle/archery ranges, trails, canoes, and various outdoor activity equipment.</p>
-              </div>
-            </article>
+      <section className="seamless-bottom page-hero">
+        <div className="page-hero__image blue">
+          <img src="/images/hero/camping.jpg" alt="camping at cary camp" />
+        </div>
+        <div className="page-hero__overlay">
+          <div className="page-hero__content">
+            <h1>Camp Facilities</h1>
+            <p>Explore the wide variety of facilities available for rental at Cary Camp.</p>
           </div>
-          
-          <figure>
-            <img src="https://www.carycamp.com/facilities/index_council_ring.jpg" alt="Council ring" />
-            <figcaption>Evening campfire in the Council Ring</figcaption>
-          </figure>
+        </div>
+      </section>
+      <div className="facility-locations">
+        <div className="facility-location facility-location--left">
+          <div className="facility-location__image">
+            <img src="/images/placeholder.jpg" alt="Council ring" />
+          </div>
+          <div className="facility-location__content">
+            <h2>Council Ring</h2>
+            <p>The Council Ring is an outdoor amphitheater used for campfires, ceremonies, and group gatherings. It features tiered seating arranged in a semicircle around a central fire pit, providing an ideal setting for storytelling, skits, and songs under the stars.</p>
+            <Link to="/facilities/council-ring">Learn more</Link>
+          </div>
+        </div>
+        <div className="facility-location facility-location--right">
+          <div className="facility-location__image">
+            <img src="/images/placeholder.jpg" alt="McAllister Scouting Center" />
+          </div>
+          <div className="facility-location__content">
+            <h2>McAllister Scouting Center</h2>
+            <p>The McAllister Scouting Center serves as the main hub for administrative activities, meetings, and indoor events at Cary Camp. It is equipped with meeting rooms, a kitchen, and dining facilities to accommodate various group needs.</p>
+            <Link to="/facilities/mcallister">Learn more</Link>
+          </div>
+        </div>
+        <div className="facility-location facility-location--left">
+          <div className="facility-location__image">
+            <img src="/images/placeholder.jpg" alt="Cabins at Cary Camp" />
+          </div>
+          <div className="facility-location__content">
+            <h2>Cabins & Lodging</h2>
+            <p>Cary Camp offers several cabins for lodging, including Tecumseh Lodge, Shawnee Cabin, and Sioux Cabin. These cabins provide comfortable accommodations with bunk beds, heating, and electricity, making them ideal for overnight stays.</p>
+            <Link to="/facilities/cabins">Learn more</Link>
+          </div>
+        </div>
+        <div className="facility-location facility-location--right">
+          <div className="facility-location__image">
+            <img src="/images/placeholder.jpg" alt="Campsites at Cary Camp" />
+          </div>
+          <div className="facility-location__content">
+            <h2>Campsites</h2>
+            <p>Cary Camp features five well-equipped campsites, each with shelters, fire rings, picnic tables, and access to water and sanitation facilities. These campsites are perfect for Scout troops and outdoor groups looking to experience camping in a natural setting.</p>
+            <Link to="/facilities/campsites">Learn more</Link>
+          </div>
+        </div>
+        <div className="facility-location facility-location--left">
+          <div className="facility-location__image">
+            <img src="/images/placeholder.jpg" alt="Shelter houses at Cary Camp" />
+          </div>
+          <div className="facility-location__content">
+            <h2>Shelter Houses</h2>
+            <p>Cary Camp has six shelter houses available for group use. These shelters provide covered spaces for picnics, meetings, and activities, offering protection from the elements while allowing groups to enjoy the outdoors.</p>
+            <Link to="/facilities/shelters">Learn more</Link>
+          </div>
+        </div>
+        <div className="facility-location facility-location--right">
+          <div className="facility-location__image">
+            <img src="/images/placeholder.jpg" alt="Recreational facilities at Cary Camp" />
+          </div>
+          <div className="facility-location__content">
+            <h2>Recreational Facilities</h2>
+            <p>Cary Camp offers a variety of recreational facilities, including an Olympic-sized swimming pool, sports fields, and access to Wildcat Creek for canoeing and fishing. These amenities provide ample opportunities for outdoor fun and physical activity.</p>
+            <Link to="/facilities/recreational">Learn more</Link>
+          </div>
+        </div>
+        <div className="facility-location facility-location--left">
+          <div className="facility-location__image">
+            <img src="/images/placeholder.jpg" alt="Outdoor chapel at Cary Camp" />
+          </div>
+          <div className="facility-location__content">
+            <h2>Outdoor Chapel</h2>
+            <p>The Outdoor Chapel at Cary Camp is a serene space for worship, reflection, and ceremonies. Surrounded by nature, it provides a peaceful setting for spiritual gatherings and special events.</p>
+            <Link to="/facilities/chapel">Learn more</Link>
+          </div>
         </div>
       </div>
     </Layout>

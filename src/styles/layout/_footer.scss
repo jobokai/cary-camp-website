@@ -67,15 +67,49 @@
 }
 
 // Contact Information Styling
-.contact-info {
+.footer__section.contact-info {
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+
   address {
     font-style: normal;
     line-height: $line-height-relaxed;
     
     strong {
       display: block;
-      color: $text-light;
+      color: $scouting-gold;  // Match h3 color
+      font-family: $font-primary;  // Match h3 font
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
       margin-bottom: $space-2;
     }
+    
+    // Style the contact details to match other footer links
+    a {
+      color: $scouting-light-tan;
+      transition: color 0.2s ease;
+      font-weight: bold;
+      
+      &:hover {
+        color: $scouting-gold;
+      }
+    }
+    
+    // Ensure consistent text color for contact details
+    color: $scouting-light-tan;
+    font-family: $font-tertiary;
   }
+}
+
+.footer__bottom a {
+  color: $white;
+  
+  &:hover {
+    color: $scouting-gold;
+  }
+}
+
+.footer__bottom--icon {
+  color: $scouting-red;
 }

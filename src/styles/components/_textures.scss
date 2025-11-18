@@ -80,8 +80,48 @@
   }
 }
 
-.texture-bg-overlay--standard {
+.texture-bg-overlay--blue {
+  background-color: $scouting-blue;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--pale-blue {
+  background-color: $scouting-pale-blue;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--dark-blue {
   background-color: $scouting-dark-blue;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--warm-gray {
+  background-color: $scouting-warm-gray;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--pale-gray {
+  background-color: $scouting-pale-gray;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--dark-gray {
+  background-color: $scouting-dark-gray;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--tan {
+  background-color: $scouting-tan;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--light-tan {
+  background-color: $scouting-light-tan;
+  background-blend-mode: multiply;
+}
+
+.texture-bg-overlay--dark-tan {
+  background-color: $scouting-dark-tan;
   background-blend-mode: multiply;
 }
 
@@ -100,15 +140,15 @@
 
 // Texture backgrounds from public/images/texture
 .texture-canvas {
-  background-image: url('/images/texture/canvas.jpg');
+  background-image: url('/images/texture/canvas-bw.jpg');
 }
 
 .texture-footprint {
-  background-image: url('/images/texture/footprint.jpg');
+  background-image: url('/images/texture/footprint-bw.jpg');
 }
 
 .texture-prairie {
-  background-image: url('/images/texture/prarie.jpg');
+  background-image: url('/images/texture/prarie-bw.jpg');
 }
 
 .texture-stone {
@@ -116,11 +156,11 @@
 }
 
 .texture-tree-rings {
-  background-image: url('/images/texture/tree-rings.jpg');
+  background-image: url('/images/texture/tree-rings-bwg.jpg');
 }
 
 .texture-woodgrain {
-  background-image: url('/images/texture/woodgrain.jpg');
+  background-image: url('/images/texture/woodgrain-bw.jpg');
 }
 
 // Content Band Components

@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function Hero({ 
   title, 
@@ -37,6 +39,7 @@ export default function Hero({
             {ctaText && ctaLink && (
               <Link to={ctaLink} className="hero__cta">
                 {ctaText}
+                <FontAwesomeIcon icon={faArrowRight} className="hero__cta-icon" />
               </Link>
             )}
           </div>
@@ -50,6 +53,7 @@ export default function Hero({
           {ctaText && ctaLink && (
             <Link to={ctaLink} className="hero__cta">
               {ctaText}
+              <FontAwesomeIcon icon={faArrowRight} className="hero__cta-icon" />
             </Link>
           )}
         </div>

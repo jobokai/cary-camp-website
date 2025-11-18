@@ -1,0 +1,146 @@
+// About Page Layout Improvements - BSA Styled
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+// Override page content bottom padding for seamless SVG
+.page-content.seamless-bottom {
+  padding-bottom: 0;
+}
+
+// Override page wrapper and main content for seamless layout
+.page-wrapper:has(.seamless-bottom) {
+  min-height: auto;
+}
+
+.page-wrapper:has(.seamless-bottom) .main-content {
+  flex: none;
+}
+
+.about-intro,
+.about-current {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: $space-8;
+  align-items: center;
+  margin-bottom: $space-8;
+  min-height: 400px;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $space-6;
+    margin-bottom: $space-6;
+    min-height: auto;
+  }
+}
+
+// Alternate layout for current section
+.about-current {
+  grid-template-columns: 0.8fr 1.2fr;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+.about-image {
+  
+  figure {
+    margin: 0;
+    background: $white;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-lg;
+    border: 1px solid $scouting-light-tan;
+    height: 350px;
+    position: relative;
+    
+    @media (max-width: $breakpoint-md) {
+      height: 250px;
+      margin-bottom: $space-4;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      
+      &.clickable-image {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+    
+    figcaption {
+      padding: $space-3;
+      font-family: $font-secondary;
+      font-size: $font-size-xs;
+      color: $scouting-dark-blue;
+      text-align: center;
+      font-weight: $font-weight-bold;
+      background: rgba($white, 0.95);
+      border-top: 1px solid $scouting-light-tan;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      backdrop-filter: blur(5px);
+    }
+  }
+}
+
+.about-text {
+  padding: $space-4;
+  
+  h2 {
+    font-family: $font-primary;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+    color: $scouting-dark-blue;
+    margin-bottom: $space-4;
+    line-height: $line-height-tight;
+  }
+  
+  p {
+    font-family: $font-tertiary;
+    color: $scouting-dark-gray;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-4;
+    font-size: $font-size-base;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.svg-map-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: $scouting-tan;
+  
+  .svg-map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .camp-svg-map {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+  }
+}

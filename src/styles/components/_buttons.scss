@@ -67,19 +67,4 @@
   }
 }
 
-// CTA Button (Call to Action) - BSA Branding
-.cta-button {
-  @extend .btn;
-  @extend .btn--primary;
-  @extend .btn--large;
-  
-  background: linear-gradient(135deg, $scouting-blue 0%, $scouting-dark-blue 100%);
-  border: 3px solid $white;
-  box-shadow: $shadow-lg;
-  
-  &:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: $shadow-xl;
-    border-color: $scouting-gold;  // BSA Gold accent
-  }
-}
+// CTA buttons are now handled in _cta-button.scss for better accessibility

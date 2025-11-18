@@ -1,9 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import Facilities from './pages/Facilities'
-import Contact from './pages/Contact'
 import './styles/main.scss'
+import './fontawesome.js'
+
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Facilities from './pages/Facilities'
+import Home from './pages/Home'
+import TradingPost from './pages/TradingPost'
 
 function App() {
   return (
@@ -20,6 +24,7 @@ function App() {
         <Route path="/facilities/recreational" element={<Facilities />} />
         <Route path="/weddings" element={<Contact />} />
         <Route path="/policies" element={<Contact />} />
+        <Route path="/trading-post" element={<TradingPost />} />
       </Routes>
     </Router>
   )

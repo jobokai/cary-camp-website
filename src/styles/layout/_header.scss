@@ -60,7 +60,7 @@
   
   &__title {
     font-family: $font-primary;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.4rem, 2.5vw, 1.5rem);
     font-weight: $font-weight-bold;
     color: $scouting-blue;
     line-height: 1.2;
@@ -203,9 +203,8 @@
     box-shadow: 0 2px 8px rgba($scouting-red, 0.3);
     
     &:hover {
-      background: color.scale($scouting-red, $lightness: -8%);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba($scouting-red, 0.4);
+      background: $scouting-dark-blue;
+      color: $white;
     }
     
     &:active {
@@ -359,6 +358,7 @@
     
     &:hover {
       background: color.scale($scouting-red, $lightness: -8%);
+      color: $white;
     }
   }
 }

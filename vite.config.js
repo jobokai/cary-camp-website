@@ -22,6 +22,7 @@ export default defineConfig({
     // Ensure proper file watching with Yarn PnP
     watch: {
       usePolling: true
-    }
+    },
+    port: 8080
   }
 })

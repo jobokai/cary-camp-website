@@ -1,0 +1,127 @@
+@use '../base/variables' as *;
+@use '../base/spacing' as *;
+@use '../base/typography' as *;
+
+// basing this off https://www.ironworkshotelindy.com/rooms
+
+// Facility Locations Layout
+.facility-locations {
+  padding: 3rem 6rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.facility-location {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  position: relative;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+
+    img {
+      object-position: center;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: brightness(0.7);
+    }
+  }
+
+  &__content {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(0%, -50%);
+     background: rgba($scouting-dark-blue, 0.95);
+     color: $white;
+     padding: $space-8;
+     border-radius: $radius-lg;
+     box-shadow: $shadow-xl;
+     z-index: 2;
+    
+     @media (max-width: $breakpoint-md) {
+       position: relative !important;
+       width: 100% !important;
+       transform: none !important;
+       background: rgba($scouting-dark-blue, 0.9);
+     }
+    
+     h2 {
+       font-family: $font-primary;
+       font-size: $font-size-h2;
+       font-weight: $font-weight-bold;
+       color: $white;
+       margin-bottom: $space-4;
+       line-height: $line-height-tight;
+       text-transform: uppercase;
+       letter-spacing: 0.05em;
+     }
+    
+     p {
+       font-family: $font-tertiary;
+      font-size: $font-size-base;
+       color: rgba($white, 0.9);
+       line-height: $line-height-relaxed;
+       margin-bottom: $space-6;
+     }
+    
+     a {
+       display: inline-flex;
+       align-items: center;
+       padding: $space-3 $space-6;
+       background: $scouting-red;
+       color: $white;
+       text-decoration: none;
+       border-radius: $radius-md;
+       font-family: $font-secondary;
+       font-weight: $font-weight-semibold;
+       font-size: $font-size-sm;
+       text-transform: uppercase;
+       letter-spacing: 0.1em;
+       transition: all 0.2s ease;
+       border: 2px solid $scouting-red;
+      
+       &:hover {
+         background: transparent;
+         border-color: $scouting-red;
+         color: $white;
+       }
+     }
+   }
+
+   &.facility-location--left {
+     .facility-location__image {
+       left: 0;
+     }
+    
+     .facility-location__content {
+       left: 40%;
+       text-align: left;
+     }
+   }
+
+   &.facility-location--right {
+     .facility-location__image {
+       right: 0;
+       left: unset;
+     }
+    
+     .facility-location__content {
+       left: auto;
+       right: 40%;
+       text-align: right;
+     }
+   }
+}
