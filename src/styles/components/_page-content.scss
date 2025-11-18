@@ -105,75 +105,206 @@
   }
   
   // Contact page specific styling
+  
+  // Responsive contact grid layout
+  .contact-grid {
+    display: grid;
+    gap: $space-10;
+    margin-top: $space-10;
+    
+    // Mobile: single column
+    grid-template-columns: 1fr;
+    
+    // Tablet: 2 columns
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $space-8;
+    }
+    
+    // Desktop: 3 columns
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-8;
+    }
+  }
+  
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    h2 {
+      color: $scouting-blue;
+      border-bottom: 3px solid $scouting-tan;
+      padding-bottom: $space-3;
+      margin-bottom: $space-6;
+      font-family: $font-primary;
+      font-size: $font-size-h2;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: $line-height-tight;
+    }
+    
+    // Ensure content sections take full height
+    .ranger-info,
+    address,
+    .rangers-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
   address {
     font-style: normal;
-    background-color: $scouting-light-tan;  // BSA Light Tan
-    padding: $space-6;
+    background-color: $scouting-light-tan;
+    padding: $space-8;
     border-radius: $radius-lg;
-    border-left: 4px solid $scouting-blue;  // BSA Blue
-    margin: $space-6 0;
+    border-left: 4px solid $scouting-blue;
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    font-family: $font-tertiary;
     
     strong {
       display: block;
-      color: $scouting-blue;  // BSA Blue
+      color: $scouting-blue;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-xl;
+      margin-bottom: $space-4;
+      font-family: $font-primary;
+    }
+    
+    a {
+      color: $scouting-dark-blue;
       font-weight: $font-weight-semibold;
-      margin-bottom: $space-2;
+      text-decoration: none;
+      
+      &:hover {
+        color: $scouting-blue;
+        text-decoration: underline;
+      }
     }
   }
   
   // Ranger info styling
   .ranger-info {
     display: flex;
+    flex-direction: column;
     gap: $space-6;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    background-color: $scouting-tan;  // BSA Tan
-    padding: $space-6;
+    background-color: $scouting-tan;
+    padding: $space-8;
     border-radius: $radius-lg;
-    margin: $space-6 0;
+    height: 100%;
     
     img {
       border-radius: $radius-lg;
-      max-width: 200px;
+      max-width: 160px;
+      width: 100%;
+      height: auto;
       margin: 0 auto;
+      box-shadow: $shadow-lg;
+      border: 3px solid $white;
     }
     
     .ranger-details {
-      flex: 1;
-      min-width: 250px;
+      text-align: center;
       
       h3 {
-        color: $scouting-dark-gray;  // BSA Dark Gray
+        color: $scouting-dark-blue;
         margin-top: 0;
-        margin-bottom: $space-3;
+        margin-bottom: $space-4;
+        font-family: $font-primary;
+        font-size: $font-size-h3;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-tight;
+      }
+      
+      p {
+        line-height: $line-height-relaxed;
+        color: $scouting-dark-gray;
+        font-size: $font-size-lg;
+        font-family: $font-tertiary;
+        
+        a {
+          color: $scouting-dark-blue;
+          font-weight: $font-weight-semibold;
+          text-decoration: none;
+          
+          &:hover {
+            color: $scouting-blue;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    
+    // Larger screens: side-by-side layout within the grid
+    @media (min-width: $breakpoint-xl) {
+      flex-direction: row;
+      gap: $space-8;
+      
+      img {
+        max-width: 140px;
+        margin: 0;
+        align-self: flex-start;
+      }
+      
+      .ranger-details {
+        text-align: left;
+        flex: 1;
       }
     }
   }
   
   // Previous rangers list
   .rangers-list {
-    background-color: $scouting-light-tan;  // BSA Light Tan
-    padding: $space-6;
+    background-color: $scouting-light-tan;
+    padding: $space-8;
     border-radius: $radius-lg;
+    height: 100%;
+    
+    img {
+      border-radius: $radius-md;
+      box-shadow: $shadow-lg;
+      margin: 0 auto $space-6 auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid $white;
+    }
     
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
+      flex: 1;
       
       li {
-        padding: $space-2 0;
-        border-bottom: 1px solid $scouting-tan;  // BSA Tan
+        padding: $space-3 0;
+        border-bottom: 1px solid rgba($scouting-tan, 0.5);
+        color: $scouting-dark-gray;
+        font-family: $font-tertiary;
+        font-size: $font-size-lg;
+        line-height: $line-height-relaxed;
+        transition: all 0.2s ease;
         
         &:last-child {
           border-bottom: none;
         }
+        
+        &:first-child {
+          font-weight: $font-weight-bold;
+          color: $scouting-blue;
+          font-size: $font-size-xl;
+          padding-top: 0;
+        }
+        
+        &:hover {
+          color: $scouting-blue;
+          padding-left: $space-2;
+        }
       }
-    }
-
-    img {
-      border-radius: 0;
-      box-shadow: none;
-      margin: 0 auto;
     }
   }
 }

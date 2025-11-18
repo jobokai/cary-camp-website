@@ -5,7 +5,7 @@ export default function TradingPost() {
     <Layout title="Trading Post - Cary Camp">
       <section className="seamless-bottom page-hero">
         <div className="page-hero__image gray">
-          <img src="/images/trade_main.jpg" alt="Trading Post main sales floor at Cary Camp" />
+          <img src="/images/trading-post-inside.jpg" alt="Trading Post main sales floor at Cary Camp" />
         </div>
         <div className="page-hero__overlay">
           <div className="page-hero__content">

@@ -25,7 +25,7 @@ export default function Home() {
           <div className="content-grid">
             <article className="card">
               <img 
-                src="https://www.carycamp.com/facilities/index_council_ring.jpg" 
+                src="/images/council-ring.jpg" 
                 alt="Evening campfire at the Council Ring with scouts gathered around"
                 className="card__image"
               />
@@ -41,7 +41,7 @@ export default function Home() {
             
             <article className="card">
               <img 
-                src="https://www.carycamp.com/small_bridge.jpg" 
+                src="/images/fall-bridge.jpg" 
                 alt="Wooden footbridge crossing through wooded trails at Cary Camp"
                 className="card__image"
               />
@@ -57,7 +57,7 @@ export default function Home() {
             
             <article className="card">
               <img 
-                src="https://www.carycamp.com/weddings/bridge.jpg" 
+                src="/images/bridge.jpg" 
                 alt="Rustic wooden bridge in natural woodland setting perfect for events"
                 className="card__image"
               />

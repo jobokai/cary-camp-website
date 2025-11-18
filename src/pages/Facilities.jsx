@@ -19,7 +19,7 @@ export default function Facilities() {
       <div className="facility-locations">
         <div className="facility-location facility-location--left">
           <div className="facility-location__image">
-            <img src="/images/placeholder.jpg" alt="Council ring" />
+            <img src="/images/council-ring.jpg" alt="Council ring" />
           </div>
           <div className="facility-location__content">
             <h2>Council Ring</h2>
@@ -29,7 +29,7 @@ export default function Facilities() {
         </div>
         <div className="facility-location facility-location--right">
           <div className="facility-location__image">
-            <img src="/images/placeholder.jpg" alt="McAllister Scouting Center" />
+            <img src="/images/mcallister.jpg" alt="McAllister Scouting Center" />
           </div>
           <div className="facility-location__content">
             <h2>McAllister Scouting Center</h2>
@@ -39,7 +39,7 @@ export default function Facilities() {
         </div>
         <div className="facility-location facility-location--left">
           <div className="facility-location__image">
-            <img src="/images/placeholder.jpg" alt="Cabins at Cary Camp" />
+            <img src="/images/bunk-room.jpg" alt="Cabins at Cary Camp" />
           </div>
           <div className="facility-location__content">
             <h2>Cabins & Lodging</h2>
@@ -49,7 +49,7 @@ export default function Facilities() {
         </div>
         <div className="facility-location facility-location--right">
           <div className="facility-location__image">
-            <img src="/images/placeholder.jpg" alt="Campsites at Cary Camp" />
+            <img src="/images/camping-tents.jpg" alt="Campsites at Cary Camp" />
           </div>
           <div className="facility-location__content">
             <h2>Campsites</h2>
@@ -59,7 +59,7 @@ export default function Facilities() {
         </div>
         <div className="facility-location facility-location--left">
           <div className="facility-location__image">
-            <img src="/images/placeholder.jpg" alt="Shelter houses at Cary Camp" />
+            <img src="/images/shelter.jpg" alt="Shelter houses at Cary Camp" />
           </div>
           <div className="facility-location__content">
             <h2>Shelter Houses</h2>
@@ -69,7 +69,7 @@ export default function Facilities() {
         </div>
         <div className="facility-location facility-location--right">
           <div className="facility-location__image">
-            <img src="/images/placeholder.jpg" alt="Recreational facilities at Cary Camp" />
+            <img src="/images/black-hole.jpg" alt="Recreational facilities at Cary Camp" />
           </div>
           <div className="facility-location__content">
             <h2>Recreational Facilities</h2>
